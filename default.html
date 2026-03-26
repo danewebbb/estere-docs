@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{% if page.title %}{{ page.title }} — {% endif %}{{ site.title }}</title>
+  <meta name="description" content="{{ page.description | default: site.description }}" />
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}" />
+</head>
+<body>
+<div class="page-wrapper">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <a href="{{ '/' | relative_url }}" class="sidebar-logo">
+      <div class="sidebar-logo-mark">E/</div>
+      <span class="sidebar-logo-text">Estere</span>
+      <span class="sidebar-logo-badge">docs</span>
+    </a>
+
+    <nav class="sidebar-nav">
+
+      <div class="sidebar-section">
+        <div class="sidebar-section-label">Inizia qui</div>
+        <a href="{{ '/' | relative_url }}" {% if page.url == '/' %}class="active"{% endif %}>Panoramica</a>
+      </div>
+
+      <div class="sidebar-section">
+        <div class="sidebar-section-label">Guida Utente</div>
+        <a href="{{ '/guida-utente/' | relative_url }}" {% if page.url contains 'guida-utente' %}class="active"{% endif %}>Come usare Estere</a>
+        <a href="{{ '/guida-utente/upload-fattura' | relative_url }}" {% if page.url contains 'upload-fattura' %}class="active"{% endif %}>Caricare una fattura</a>
+        <a href="{{ '/guida-utente/collegare-fic' | relative_url }}" {% if page.url contains 'collegare-fic' %}class="active"{% endif %}>Collegare Fatture in Cloud</a>
+        <a href="{{ '/guida-utente/creare-autofattura' | relative_url }}" {% if page.url contains 'creare-autofattura' %}class="active"{% endif %}>Creare l'autofattura</a>
+      </div>
+
+      <div class="sidebar-section">
+        <div class="sidebar-section-label">Architettura</div>
+        <a href="{{ '/architettura/' | relative_url }}" {% if page.url contains 'architettura' %}class="active"{% endif %}>Stack tecnico</a>
+        <a href="{{ '/architettura/flusso-dati' | relative_url }}" {% if page.url contains 'flusso-dati' %}class="active"{% endif %}>Flusso dei dati</a>
+        <a href="{{ '/architettura/database' | relative_url }}" {% if page.url contains 'database' %}class="active"{% endif %}>Schema database</a>
+      </div>
+
+      <div class="sidebar-section">
+        <div class="sidebar-section-label">API Reference</div>
+        <a href="{{ '/api-reference/' | relative_url }}" {% if page.url contains 'api-reference' %}class="active"{% endif %}>Endpoints</a>
+        <a href="{{ '/api-reference/fic-integration' | relative_url }}" {% if page.url contains 'fic-integration' %}class="active"{% endif %}>FiC Integration</a>
+      </div>
+
+      <div class="sidebar-section">
+        <div class="sidebar-section-label">Field Mapping</div>
+        <a href="{{ '/field-mapping/' | relative_url }}" {% if page.url contains 'field-mapping' %}class="active"{% endif %}>Estere → FiC</a>
+      </div>
+
+      <div class="sidebar-section">
+        <div class="sidebar-section-label">Supporto</div>
+        <a href="{{ '/faq/' | relative_url }}" {% if page.url contains 'faq' %}class="active"{% endif %}>FAQ</a>
+      </div>
+
+    </nav>
+  </aside>
+
+  <!-- MAIN -->
+  <div class="main-content">
+    <header class="content-header">
+      <span class="breadcrumb">
+        estere / docs{% if page.title %} / <span>{{ page.title }}</span>{% endif %}
+      </span>
+    </header>
+
+    <main class="content-body">
+      {{ content }}
+    </main>
+  </div>
+
+</div>
+</body>
+</html>

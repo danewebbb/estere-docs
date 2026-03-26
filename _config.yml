@@ -1,0 +1,26 @@
+title: Estere Docs
+description: Documentazione ufficiale di Estere — il software che legge le fatture estere e crea l'autofattura su Fatture in Cloud.
+baseurl: "/fattureestere"
+url: "https://danewebbb.github.io"
+
+repository: danewebbb/fattureestere
+
+# Nessun tema — usiamo il nostro layout custom in _layouts/default.html
+# theme: minima  (disabilitato)
+
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+
+# Markdown settings
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+# Exclude from build
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
