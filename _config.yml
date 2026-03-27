@@ -5,12 +5,12 @@ url: "https://danewebbb.github.io"
 
 repository: danewebbb/fattureestere
 
-# Nessun tema — usiamo il nostro layout custom in _layouts/default.html
-# theme: minima  (disabilitato)
+remote_theme: just-the-docs/just-the-docs
 
 plugins:
   - jekyll-feed
   - jekyll-sitemap
+  - jekyll-remote-theme
 
 # Markdown settings
 markdown: kramdown
